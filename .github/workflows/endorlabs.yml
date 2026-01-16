@@ -24,7 +24,7 @@ jobs:
         - name: Endor Labs SCA Scan
           uses: endorlabs/github-action@main
           with:
-            namespace: "endor-solutions-tsaekao.github-app"
+            namespace: "endor-solutions-tsaekao.github"
             api: "https://api.endorlabs.com"
             pr: false
             enable_github_action_token: true
