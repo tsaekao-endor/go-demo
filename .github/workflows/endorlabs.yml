@@ -1,5 +1,6 @@
-name: Endor Labs - Go SCA Scan on Main Branch
+name: Endor Labs Scan
 on:
+  push: 
   workflow_dispatch:
 
 jobs:
@@ -29,7 +30,7 @@ jobs:
             pr: false
             enable_github_action_token: true
             scan_dependencies: true
-            # scan_secrets: true <-- Uncomment to enable secrets scanning
+            scan_secrets: true <-- Uncomment to enable secrets scanning
             # scan_git_logs: true <-- Uncomment to scan git logs for committed secrets
             # scan_github_actions: true <-- Uncomment to scan GH Action Vulnerabilities
             # scan_tools: true <-- Uncomment to scan identified tools
