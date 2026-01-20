@@ -1,11 +1,12 @@
 name: Endor Labs Scan
 on:
-  push: 
+  # push: 
   workflow_dispatch:
 
 jobs:
   scan-repo:
     runs-on: ubuntu-latest
+    # We need these permissions for GitHub Keyless Auth
     permissions:
       id-token: write
       contents: read
@@ -13,15 +14,18 @@ jobs:
         
         - name: Checkout Repository
           uses: actions/checkout@v3
-          
+
+        # Setup Go Version
         - name: Setup Go
           uses: actions/setup-go@v4
           with:
             go-version: '1.22.4'
-          
+
+        # Build Go Project
         - name: Go Build 
           run: go build
-          
+
+        # GitHub actions for Endor Scanning
         - name: Endor Labs SCA Scan
           uses: endorlabs/github-action@main
           with:
